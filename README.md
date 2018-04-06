@@ -1,9 +1,5 @@
-Symfony Standard Edition
+Symfony 3.4
 ========================
-
-**WARNING**: This distribution does not support Symfony 4. See the
-[Installing & Setting up the Symfony Framework][15] page to find a replacement
-that fits you best.
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony
 application that you can use as the skeleton for your new applications.
@@ -11,12 +7,32 @@ application that you can use as the skeleton for your new applications.
 For details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
 
+There's no need to configure anything to run the application. Just execute this command to run the built-in web server and access the application in your browser at http://127.0.0.1:8000/secure/login
+![alt text](http://laxmiclothes.com/SymfonyDesktop.png)
+![alt text](http://laxmiclothes.com/SymfonyLogin.png)
+
+
+<pre>
+$ cd symfony3.4-complete-setup/
+$ php bin/console doctrine:database:create
+$ php bin/console doctrine:schema:update --force
+$ php bin/console Login:loaddata
+$ php bin/console server:run</pre>
+
+
+Every thing is done now open url http://127.0.0.1:8000/secure/login
+
 What's inside?
 --------------
 
 The Symfony Standard Edition is configured with the following defaults:
 
-  * An AppBundle you can use to start coding;
+  * An AdminBundle you can use to start coding for admin panel;
+  * An DBBundle you can use to start coding for Database;
+  * An ServiceBundle you can use to start coding for Rest Api;
+  * An CommonBundle you can use to start coding for Common helper;
+  * An SiteBundle you can use to start coding for your front end website;
+
 
   * Twig as the only configured template engine;
 
@@ -29,6 +45,11 @@ The Symfony Standard Edition is configured with the following defaults:
 It comes pre-configured with the following bundles:
 
   * **FrameworkBundle** - The core Symfony framework bundle
+  
+  * **VichUploaderBundle** - Adds support for image uploadation
+    
+  * **beberlei/DoctrineExtensions** - Adds support for doctrine custom query helper.
+
 
   * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
     template and routing annotation capability
@@ -45,17 +66,17 @@ It comes pre-configured with the following bundles:
 
   * [**MonologBundle**][11] - Adds support for Monolog, a logging library
 
+  * [**AsseticBundle**][12] - Adds support for Assetic, an asset processing
+    library
+
   * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
     the web debug toolbar
 
   * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
     configuring and working with Symfony distributions
 
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
+  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
     capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
 
   * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
     integration
@@ -72,7 +93,5 @@ Enjoy!
 [9]:  https://symfony.com/doc/3.4/security.html
 [10]: https://symfony.com/doc/3.4/email.html
 [11]: https://symfony.com/doc/3.4/logging.html
+[12]: https://symfony.com/doc/3.4/assetic/asset_management.html
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
-[15]: https://symfony.com/doc/current/setup.html
-# symfony3.4-complete-setup
